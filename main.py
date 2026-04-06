@@ -9,12 +9,12 @@ def guardar_archivo(Clientes):
         print("Datos guardados correctamente\n")
 
 #Cargar
-def cargar_archivo():
+def cargar_archivo(Clientes):
     try:
-        with open("clientes.json", "r") as file:
-            clientes = json.load(file)
+        with open("Clientes.json", "r") as file:
+            Clientes = json.load(file)
             print("Datos cargados correctamente\n")
-            return clientes
+            return Clientes
     except:
         print("No hay datos guardados\n")
         return [] 
@@ -113,14 +113,15 @@ def menu():
         elif op == "5":
             Eliminar_Cliente(Clientes)
         elif op =="6":
-            guardar_archivo
+            guardar_archivo(Clientes)
         elif op == "7":
-            Clientes = cargar_archivo        
+            Clientes=cargar_archivo(Clientes)        
         elif op == "8":
             print("Cerrando\n")
+            
         else:
             print("Opcion no Valida\n")    
-                    
+               
 
 
 
